@@ -1,34 +1,35 @@
+#!/usr/bin/env node
+
 var express = require('express');
 var path = require('path');
 var app = express();
+var commandLineArgs = require('command-line-args');
 var bodyParser = require('body-parser');
-var config = require('./config');
 var mongoose = require('mongoose');
 require('./models/url');
 
+// Parse command line args
+var cli = commandLineArgs([
+  {name: 'config', alias: 'c', type: String, defaultValue: './config'}
+]);
+var options = cli.parse(process.argv);
+
+// Get the config
+var config = require('./' + options.config);
+
+// Connect to MongoDB
 mongoose.connect(config.db.url);
 
+// Setup express extensions
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+// Start the server
 var port = process.env.PORT || 3000;
 var server = app.listen(port);
 
+// Setup routes
 var urlRoutes = require('./routes/urls');
 app.use('/', urlRoutes);
-
-app.use(function(req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
-});
-
-if (app.get('env') === 'development') {
-    app.use(function(err, req, res, next) {
-        res.status(err.status || 500);
-        res.json(err);
-        console.log(err);
-    });
-}
 
 module.exports = app;

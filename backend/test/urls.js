@@ -6,6 +6,10 @@ var app = require('../app');
 
 var originalUrl = "http://google.com";
 
+beforeEach(function(done) {
+  mongoose.connection.db.dropDatabase(done);
+})
+
 describe('Url creation', function() {
   it('should create a url when posted to', function(done) {
 
@@ -41,11 +45,16 @@ describe('Url creation', function() {
 
 describe('Url fetching', function() {
     it('should redirect to the original url', function(done) {
-      var shortUrl = 'shortUrl';
-
       request(app)
-        .get('/' + shortUrl)
-        .expect('Location', originalUrl, done);
+        .put('/')
+        .send({originalUrl: originalUrl})
+        .end(function(err, res) {
+          var shortUrl = res.body.shortUrl;
+
+          request(app)
+            .get('/' + shortUrl)
+            .expect('Location', originalUrl, done);
+        });
     });
 
     it('should 404 if a url does not exist', function(done) {
