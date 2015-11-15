@@ -1,3 +1,6 @@
 .DS_STORE
 backend/node_modules/
 backend/npm-debug.log*
+
+frontend/Url Shortener/Pods
+*.xcworkspace

@@ -13,7 +13,8 @@ On the frontend, you can create shortened urls, then tap the new url in the list
  - Run `npm install` in the `backend` directory
 
 ### Frontend
-The frontend is all included since IOS can be pretty sensitive to changes. There should be no extra setup involved.
+ - Install [CocoaPods](https://cocoapods.org/) (sudo gem install cocoapods)
+ - Run `pod install` in `frontend/Url Shortener`
 
 ## Running
 

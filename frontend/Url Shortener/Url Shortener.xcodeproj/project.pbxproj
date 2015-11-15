@@ -14,7 +14,6 @@
 		4C816C921BF82FB200A6D930 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C816C911BF82FB200A6D930 /* Assets.xcassets */; };
 		4C816C951BF82FB200A6D930 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C816C931BF82FB200A6D930 /* LaunchScreen.storyboard */; };
 		4C816CA01BF82FB200A6D930 /* Url_ShortenerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C816C9F1BF82FB200A6D930 /* Url_ShortenerTests.swift */; };
-		4C816CAB1BF82FB200A6D930 /* Url_ShortenerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C816CAA1BF82FB200A6D930 /* Url_ShortenerUITests.swift */; };
 		4CA191191BF8406D002C5124 /* Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA191181BF8406D002C5124 /* Url.swift */; };
 		4CA191211BF84BF0002C5124 /* UrlTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA191201BF84BF0002C5124 /* UrlTableCell.xib */; };
 		4CA191231BF84BFC002C5124 /* UrlTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA191221BF84BFC002C5124 /* UrlTableCell.swift */; };
@@ -51,8 +50,6 @@
 		4C816C9F1BF82FB200A6D930 /* Url_ShortenerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Url_ShortenerTests.swift; sourceTree = "<group>"; };
 		4C816CA11BF82FB200A6D930 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C816CA61BF82FB200A6D930 /* Url ShortenerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Url ShortenerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C816CAA1BF82FB200A6D930 /* Url_ShortenerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Url_ShortenerUITests.swift; sourceTree = "<group>"; };
-		4C816CAC1BF82FB200A6D930 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C816CB81BF835F800A6D930 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		4CA191181BF8406D002C5124 /* Url.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Url.swift; sourceTree = "<group>"; };
 		4CA191201BF84BF0002C5124 /* UrlTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UrlTableCell.xib; sourceTree = "<group>"; };
@@ -93,7 +90,6 @@
 			children = (
 				4C816C891BF82FB200A6D930 /* Url Shortener */,
 				4C816C9E1BF82FB200A6D930 /* Url ShortenerTests */,
-				4C816CA91BF82FB200A6D930 /* Url ShortenerUITests */,
 				4C816C881BF82FB200A6D930 /* Products */,
 				AEBA72CFD9B9D4F7C3965A60 /* Pods */,
 				6D2DB38AFB47E271005FD897 /* Frameworks */,
@@ -134,15 +130,6 @@
 				4C816CA11BF82FB200A6D930 /* Info.plist */,
 			);
 			path = "Url ShortenerTests";
-			sourceTree = "<group>";
-		};
-		4C816CA91BF82FB200A6D930 /* Url ShortenerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				4C816CAA1BF82FB200A6D930 /* Url_ShortenerUITests.swift */,
-				4C816CAC1BF82FB200A6D930 /* Info.plist */,
-			);
-			path = "Url ShortenerUITests";
 			sourceTree = "<group>";
 		};
 		6D2DB38AFB47E271005FD897 /* Frameworks */ = {
@@ -366,7 +353,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C816CAB1BF82FB200A6D930 /* Url_ShortenerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
