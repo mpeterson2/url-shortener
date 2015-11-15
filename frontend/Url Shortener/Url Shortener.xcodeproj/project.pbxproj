@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C19475C1BF92A7C00C2658D /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C19475B1BF92A7C00C2658D /* Set.swift */; };
 		4C816C8B1BF82FB200A6D930 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C816C8A1BF82FB200A6D930 /* AppDelegate.swift */; };
 		4C816C8D1BF82FB200A6D930 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C816C8C1BF82FB200A6D930 /* ViewController.swift */; };
 		4C816C901BF82FB200A6D930 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C816C8E1BF82FB200A6D930 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C19475B1BF92A7C00C2658D /* Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 		4C816C871BF82FB200A6D930 /* Url Shortener.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Url Shortener.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C816C8A1BF82FB200A6D930 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C816C8C1BF82FB200A6D930 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				4CA191181BF8406D002C5124 /* Url.swift */,
 				4CA191201BF84BF0002C5124 /* UrlTableCell.xib */,
 				4CA191221BF84BFC002C5124 /* UrlTableCell.swift */,
+				4C19475B1BF92A7C00C2658D /* Set.swift */,
 			);
 			path = "Url Shortener";
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C19475C1BF92A7C00C2658D /* Set.swift in Sources */,
 				4CA191231BF84BFC002C5124 /* UrlTableCell.swift in Sources */,
 				4C816C8D1BF82FB200A6D930 /* ViewController.swift in Sources */,
 				4CA191191BF8406D002C5124 /* Url.swift in Sources */,

@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class Url: CustomStringConvertible {
+class Url: CustomStringConvertible, Hashable {
     var originalUrl: String = ""
     var shortUrl: String = ""
     var numClicks: Int = 0
@@ -75,9 +75,19 @@ class Url: CustomStringConvertible {
             });
     }
     
+    var hashValue: Int {
+        get {
+            return shortUrl.hashValue
+        }
+    }
+    
     var description: String {
         get {
             return "originalUrl: \(originalUrl), shortUrl: \(shortUrl), numClicks: \(numClicks)"
         }
     }
+}
+
+func ==(lhs: Url, rhs: Url) -> Bool {
+    return lhs.shortUrl == rhs.shortUrl
 }

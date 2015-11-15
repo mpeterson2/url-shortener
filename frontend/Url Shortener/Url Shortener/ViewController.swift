@@ -12,7 +12,7 @@ import JLToast
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let BASE_URL = "http://localhost:3000"
     let URL_TABLE_CELL_IDENTIFIER = "UrlTableCell"
-    var knownUrls: [Url] = []
+    var knownUrls = Set<Url>()
 
     @IBOutlet weak var newUrlTextField: UITextField!
     @IBOutlet weak var newUrlButton: UIButton!
@@ -41,7 +41,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         for url in knownShortUrls {
             let newUrl = Url()
             newUrl.shortUrl = url
-            self.knownUrls.append(newUrl)
+            self.knownUrls.insert(newUrl)
             newUrl.getInfo(BASE_URL, callback: self.knownUrlsTableView.reloadData)
         }
     }
@@ -61,8 +61,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return
         }
         
+        let filteredUrls = knownUrls.filter {url in
+            return originalUrl == url.originalUrl
+        }
+        
+        if filteredUrls.count > 0 {
+            JLToast.makeText("Short url already exists").show()
+            return
+        }
+        
         Url.putNewUrl(BASE_URL, originalUrl: originalUrl, callback: {newUrl in
-            self.knownUrls.append(newUrl)
+            self.knownUrls.insert(newUrl)
             self.knownUrlsTableView.reloadData()
             self.saveShortUrls()
         })
