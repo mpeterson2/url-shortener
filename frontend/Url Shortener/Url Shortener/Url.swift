@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class Url: CustomStringConvertible {
     var originalUrl: String = ""
@@ -52,6 +53,26 @@ class Url: CustomStringConvertible {
     
     func getFullShortUrl(baseUrl: String) -> String {
         return "\(baseUrl)/\(shortUrl)"
+    }
+    
+    func getInfo(baseUrl: String, callback: () -> Void) {
+        Alamofire.request(.GET, "\(getFullShortUrl(baseUrl))/info")
+            .responseJSON(completionHandler: {response in
+                if let json = response.result.value {
+                    self.setData(json)
+                    callback()
+                }
+            })
+    }
+    
+    static func putNewUrl(baseUrl: String, originalUrl: String, callback: (url: Url) -> Void) {
+        Alamofire.request(.PUT, baseUrl, parameters: ["originalUrl": originalUrl], encoding: .JSON)
+            .responseJSON(completionHandler: {response in
+                if let json = response.result.value {
+                    let newUrl = Url(json: json)
+                    callback(url: newUrl)
+                }
+            });
     }
     
     var description: String {
