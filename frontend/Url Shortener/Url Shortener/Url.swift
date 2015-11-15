@@ -17,26 +17,9 @@ class Url: CustomStringConvertible, Hashable {
     init() {
     }
     
-    convenience init(originalUrl: String, shortUrl: String, numClicks: Int) {
-        self.init()
-        self.originalUrl = originalUrl
-        self.shortUrl = shortUrl
-        self.numClicks = numClicks
-    }
-    
     convenience init(json: AnyObject) {
-        if let
-            dict = json as? Dictionary<String, AnyObject>,
-            originalUrl = dict["originalUrl"] as? String,
-            shortUrl = dict["shortUrl"] as? String,
-            numClicks = dict["numClicks"] as? Int {
-                self.init(originalUrl: originalUrl, shortUrl: shortUrl, numClicks: numClicks)
-        }
-            
-            
-        else {
-            self.init()
-        }
+        self.init()
+        setData(json)
     }
     
     func setData(json: AnyObject) {
