@@ -32,7 +32,12 @@ router.get('/:url', function(req, res, next) {
 router.get('/:url/count', function(req, res, next) {
   var url = req.url;
   res.json({count: url.numClicks});
-})
+});
+
+router.get('/:url/info', function(req, res, next) {
+  var url = req.url;
+  res.json(url);
+});
 
 router.put('/', function(req, res, next) {
   Url.where({originalUrl: req.body.originalUrl})
