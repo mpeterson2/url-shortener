@@ -64,13 +64,12 @@ describe('Url fetching', function() {
     });
 
     it('should increment the click count when accessed', function(done) {
-      var numClicks = 0;
       request(app)
         .put('/')
         .send({originalUrl: originalUrl})
         .end(function(err, res) {
           var shortUrl = res.body.shortUrl;
-          numClicks = res.body.numClicks;
+          var numClicks = res.body.numClicks;
 
           request(app)
             .get('/' + shortUrl)
@@ -80,5 +79,21 @@ describe('Url fetching', function() {
                 .expect(200, {count: numClicks + 1}, done);
             });
         });
+    });
+
+    it('should not increment click count when asked for count', function(done) {
+      request(app)
+        .put('/')
+        .send({originalUrl: originalUrl})
+        .end(function(err, res) {
+          var shortUrl = res.body.shortUrl;
+          var numClicks = res.body.numClicks;
+
+          request(app)
+            .get('/' + shortUrl + '/count')
+            .expect(200, {
+              count: numClicks
+            }, done);
+        })
     });
 });

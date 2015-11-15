@@ -1,5 +1,5 @@
 module.exports = {
   db: {
-    'url' : 'mongodb://localhost/gifs-test'
+    'url' : 'mongodb://localhost/urlShortener'
   }
 }

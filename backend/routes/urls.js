@@ -19,19 +19,19 @@ router.param('url', function(req, res, next, url) {
 
 router.get('/:url', function(req, res, next) {
   var url = req.url;
-  res.redirect(url.originalUrl);
-});
-
-router.get('/:url/count', function(req, res, next) {
-  var url = req.url;
   url.numClicks++;
   url.save(function(err, url) {
     if (err) {
       return next(err);
     }
 
-    res.json({count: url.numClicks});
+    res.redirect(url.originalUrl);
   });
+});
+
+router.get('/:url/count', function(req, res, next) {
+  var url = req.url;
+  res.json({count: url.numClicks});
 })
 
 router.put('/', function(req, res, next) {
