@@ -1,8 +1,8 @@
 # Url Shortener
 
-Shortens long urls into a smaller url like [goo.gl](https://goo.gl) or [bitly.com](https://bitly.com)
+Shortens long urls into smaller urls like [goo.gl](https://goo.gl) or [bitly.com](https://bitly.com)
 
-On the frontend, you can create shortened urls, then tap the new url in the list to navigate to it or long press to copy the new link.
+In the app, you can create shortened urls, then tap the new url in the list to navigate to it or long press to copy the new link.
 
 ## Installation
 
