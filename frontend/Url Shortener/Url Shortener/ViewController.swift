@@ -90,6 +90,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if let url = urlFromGestureRecognizer(gesture) {
             if let nsUrl = NSURL(string: url.getFullShortUrl(BASE_URL)) {
                 UIApplication.sharedApplication().openURL(nsUrl)
+                url.numClicks++
+                knownUrlsTableView.reloadData()
             }
         }
     }
